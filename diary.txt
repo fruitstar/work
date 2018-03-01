@@ -1,0 +1,31 @@
+2018.3.1
+
+webpack工作方式：把这个项目当做一个整体，通过一个主文件，webpack将从这个主文件开始找到这个项目所有的依赖文件，然后处理他们，最后打包成一个或者多个浏览器可以是别的文件
+
+
+//全局安装
+npm install -g webpack
+//安装到你的项目目录
+npm install --save-dev webpack
+//自动创建package.json
+npm init
+
+
+在文件夹中创建两个文件夹：app文件夹用来存放原始数据和我们将写的JavaScript模块；public文件夹用来存放之后供浏览器读取的文件（包括使用webpack打包生成的js文件以及一个index.html文件）
+然后我们创建三个文件：
+
+	* index.html --放在public文件夹中;        这个文件中写html文件
+	* Greeter.js-- 放在app文件夹中;            这个文件中写一个方法
+	* main.js-- 放在app文件夹中;                 这个文件中写调用Greeter.js
+
+通过配置文件来使用Webpack
+
+更快捷的执行打包任务： package.js中
+
+"scripts": {
+    "start": "webpack" // 修改的是这里，JSON文件不支持注释，引用时请清除
+  },
+
+使用webpack构建本地服务器
+npm install --save-dev webpack-dev-server
+
