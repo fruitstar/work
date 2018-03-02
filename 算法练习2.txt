@@ -1,0 +1,49 @@
+Add Two Numbers
+
+You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
+
+You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+
+Example
+Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
+Output: 7 -> 0 -> 8
+Explanation: 342 + 465 = 807.
+
+var addTwoNumbers = function(l1, l2) {
+    var arr=[];
+    var i=0;
+    test(l1,l2)
+    function test(x,y){
+        var label1=0;
+        var label2=0;
+        label1 = x!=null?x.val:0;
+        label2 = y!=null?y.val:0;
+        if(arr[i]!=null){
+            if((label1+label2+arr[i])>=10){
+                    arr[i] = (label1+label2+arr[i])%10;
+                    arr[i+1] = 1;
+                }else{
+                    arr[i] = label1+label2+arr[i];
+                }
+        }else{
+            if(label1+label2>=10){
+                arr[i+1] = 1;
+                arr[i] = (label1+label2)%10;
+            }else{
+                arr[i] = label1+label2;
+            }
+        }
+        
+        i++;
+        var next1=null;
+        var next2=null;
+        next1 = x!=null?x.next:null;
+        next2 = y!=null?y.next:null;
+        if(next1 || next2){
+            return test(next1,next2)
+        }
+        
+        
+    }
+    return arr;
+};
