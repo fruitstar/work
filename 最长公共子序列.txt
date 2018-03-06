@@ -1,0 +1,25 @@
+最长公共子序列
+最长公共子序列（longest common sequence）和最长公共子串（longest common substring）。
+什么是子序列呢？即一个给定的序列的子序列，就是将给定序列中零个或多个元素去掉之后得到的结果。
+什么是子串呢？给定串中任意个连续的字符组成的子序列称为该串的子串。
+
+实现最长公共子序列：
+private getLCS(s1,s2):number{
+	var dyadicArr:any = [];
+	for(var i:number = 0;i<s1.length+1;i++){
+		dyadicArr[i] = [];
+		for(var j:number = 0;j<s2.length+1;j++){
+			if(i==0||j==0){
+				dyadicArr[i][j] = 0;
+			}else{
+				if(s1[i-1] == s2[j-1]){
+					dyadicArr[i][j] = dyadicArr[i-1][j-1]+1;
+					egret.log(s1[i-1]+'当前坐标:'+i+','+j)
+				}else{
+					dyadicArr[i][j] = Math.max(dyadicArr[i-1][j],dyadicArr[i][j-1]);
+				}
+			}
+		}
+	}
+	return dyadicArr[s1.length][s2.length];
+}
