@@ -1,0 +1,22 @@
+13. Roman to Integer
+Given a roman numeral, convert it to an integer.
+var romanToInt = function(s) {
+    var key = {
+        'I':1,
+        'V':5,
+        'X':10,
+        'L':50,
+        'C':100,
+        'D':500,
+        'M':1000
+    };
+    var result = 0;
+    for(var i = 0;i<s.length;i++){
+        if(key[s.charAt(i)]>=key[s.charAt(i+1)] || i==s.length-1){
+            result = result+key[s.charAt(i)];
+        }else{
+            result = result-key[s.charAt(i)];
+        }
+    }
+    return result;
+};
