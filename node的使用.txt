@@ -1,0 +1,65 @@
+2018.3.10
+Node.js的使用
+
+Nodejs框架Express是nodejs应用最广泛的框架。（帮助创建各种web和移动设备应用）
+http://www.expressjs.com.cn/4x/api.html（Express 4.xAPI中文手册）
+
+1.安装express：npm install express --registry=https://registry.npm.taobao.org
+
+2.检查node_modules目录下有没有express文件夹，如果有则说明安装成功
+ls node_modules 或者 npm list 查看
+
+3.新建一个app.js文件；执行：node app.js;浏览器访问 http://localhost:3000/
+
+
+学习使用外部模块
+Package.json文件定义了项目的各种源信息，包括项目的名称，git repo的地址，作者等等。最重要的是，其中定义了我们项目的依赖，这样这个项目在部署时，我们就不必将node_modules目录也上传到服务器，附曲奇在拿到我们的项目时，只需要执行npm install，则npm会自动读取package.json中的依赖并安装在项目的node_modules下面，然后程序就可以在服务器上跑起来了。
+
+1.npm init ：这个命令的作用就是帮我们互动式的生成一份最简单的package.json文件。
+
+2.安装依赖：npm install express utility --save
+没有置顶registry时默认从npm官方安装；--save参数，这个参数的作用，就是会在你安装依赖的同时，自动把这些依赖写入package.json文件。
+
+
+使用superagent与cheerio完成简单爬虫
+
+1.superagent是个http方面的库，可以发起get或post请求
+2.cheerio大家可以理解成一个nodejs版的jquery，用来从网页中意css selector取数据，使用方式跟jquery一样。
+3.新建一个文件夹并初始化
+4.安装依赖 npm install --save PACKAGE_NAME
+5.写应用逻辑
+📎：https://github.com/alsotang/node-lessons/tree/master/lesson3
+
+
+使用eventproxy控制并发
+
+1.Nodejs最牛逼的异步并发，上一节使用superagent和cheerio取主页内容，只能发送一次http get请求，但这次，我们需要取出每个主题的第一条评论，这就要求我们对每个主题的链接发送请求，并用cheerio取出其中的第一条评论。
+2.ep.all('data1_event', 'data2_event', 'data3_event', function (data1, data2, data3) {});
+这一句监听了三个事件，分别是data1_event，data2_event，data3_event，每次当一个源的数据抓取完成时，就通过ep.emit()来告诉自己，某某事件已经完成了。
+当三个事件未同时完成时，ep.emit()调用之后不会做任何事；当三个事件都完成时，就会调用末尾的那个回调函数，来对他们进行处理。
+3.eventproxy最常用的用法是：（1）先new一个eventproxy()，得到一个eventproxy实例；
+			（2）告诉她你要监听那些事件，并给他一个回调函数。ep.all('data1_event', 'data2_event', 'data3_event', function (data1, data2, data3) {});
+			（3）在适当的时候ep.emit('event_name',eventdata);
+
+
+
+使用async控制并发
+
+1.如果一次性并发很多个请求出去，网站有可能会因为你发出的并发连接数太多而当你是在恶意请求把你的ip封掉。所以我们在写爬虫的时候如果有1000个链接要去爬，那么我们不可能同时发出1000个并发链接出去，我们需要控制一下并发的数量，那么用async来做这件事就很简单。
+2.async.mapLimit(arr, limit, iterator, callback)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
