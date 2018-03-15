@@ -1,0 +1,21 @@
+对于CSS布局的理解
+
+常用网页布局：垂直居中；水平居中；
+
+flex布局：
+Flex：用来为盒模型提供最大的灵活性的弹性布局。
+父元素flex布局后，子元素的float，clear，和vertical-align属性将失效。
+任何一个容器都可以指定为flex布局，行内元素也可以使用flex布局。
+
+垂直居中：
+父元素不设置高度
+1.1如果父元素不设置高度，默认紧抱着子元素，那么设置padding-top=padding-bottom就有了垂直居中的效果。
+1.2对于行内元素img可以设置vertical-align：middle
+
+父元素设置了高度
+2.1单行文本：设置line-height=height实现垂直居中
+2.2最常用（适用于父元素有自己的height，自己是块状元素）负外边距：父元素设置position：relative；子元素设置absolute；top：50%；margin-top：height/2；
+2.3 子元素position:absolutive+top,bottm=0+margin:auto 0;
+
+父元素height随意，自己是行内元素、块状都是用
+3.1
