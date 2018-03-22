@@ -1,0 +1,8 @@
+<!--logs.wxml-->
+<view class="container log-list" style="background-image: url('../images/index_bg.png');">
+ <text class="log-item" style='text-align:center;margin-bottom:30px'>排行榜</text>
+  <block wx:for="{{logs}}" wx:for-item="log" wx:key="*this">
+    <text class='log-rank'>{{index+1}}</text>
+    <text class="log-item">{{log.time}}秒，点击{{log.click}}次完成第{{log.size}}关</text>
+  </block>
+</view>

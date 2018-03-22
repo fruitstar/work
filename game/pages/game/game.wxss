@@ -1,0 +1,45 @@
+.score {
+  display: flex;
+  font-size: 1vh;
+}
+
+.scoredetail {
+  flex: 1;
+  width: 150rpx;
+  border: 2px solid black;
+  margin: 30px 20rpx;
+  text-align: center;
+  border-radius: 30rpx;
+}
+
+.scoredetail:last-child {
+  margin-right: 20rpx;
+}
+
+.scoredesc {
+  font-size: 0.9rem;
+  line-height: 50rpx;
+  margin-top: 10rpx;
+}
+
+.scorenumber {
+  line-height: 60rpx;
+  font-size: 1.1rem;
+  margin-top: 5rpx;
+}
+
+.card-box {
+  padding-bottom: 88px;
+  text-align: center;
+}
+
+.rows {
+  flex-direction: row;
+  display: flex; 
+  margin-left: 9px; 
+}
+
+.card {
+  padding: 2rpx;
+  magrin: 1rpx;
+}

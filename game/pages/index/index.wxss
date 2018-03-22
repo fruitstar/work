@@ -1,0 +1,34 @@
+/**index.wxss**/
+.container {
+  color: #000;
+}
+
+.indexname {
+  margin-top: 20rpx;
+  height: 53rpx;
+  width: 230rpx;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  
+}
+
+.start-btn {
+  height: 337rpx;
+  width: 565rpx;
+  margin-top:100px;
+}
+.check-rank{
+  margin-top:27px;
+  margin-bottom: -50px;
+}

@@ -1,0 +1,21 @@
+.log-list {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+  margin:20rpx;
+}
+.log-item {
+   margin-bottom: 40rpx;
+  color:black;
+  float: left; 
+}
+
+.log-rank{
+  background-color: #000;
+  border-radius: 50%;
+  color: #fff;
+   height: 20px;
+  width: 20px; 
+  text-align: center;
+  line-height: 20px;
+}
