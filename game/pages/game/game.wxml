@@ -1,13 +1,13 @@
  <view class="" style="background-image: url('../images/index_bg.png')">
   <view class="score"> 
-     <view class="scoredetail">
+    <view class="scoredetail">
         <view class="scoredesc">时间</view>
         <view class="scorenumber">{{useTime}}</view>
     </view>
-    <!-- <view class="scoredetail">
-        <view class="scoredesc">点击次数</view>
-        <view class="scorenumber">{{clickNum}}</view>
-    </view>  -->
+     <view class="scoredetail">
+        <view class="scoredesc">完成数量</view>
+        <view class="scorenumber">{{checked}}</view>
+    </view>  
    </view>  
   <view class="card-box" >
     <view class="rows" wx:for="{{cards}}" wx:for-index="idx" wx:for-item="row" wx:key="coordinateX">

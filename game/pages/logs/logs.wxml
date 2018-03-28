@@ -1,8 +1,30 @@
 <!--logs.wxml-->
 <view class="container log-list" style="background-image: url('../images/index_bg.png');">
- <text class="log-item" style='text-align:center;margin-bottom:30px'>排行榜</text>
-  <block wx:for="{{logs}}" wx:for-item="log" wx:key="*this">
-    <text class='log-rank'>{{index+1}}</text>
-    <text class="log-item">{{log.time}}秒，点击{{log.click}}次完成第{{log.size}}关</text>
-  </block>
+  <view class="list-rank"> 
+    <view class="item-rank">
+      <text>第一关</text>
+    </view>
+    <view class="rank-info" wx:for="{{level1}}" wx:for-item="log" wx:key="*this">
+      <text class='rank-num' style="color:{{log.size>3?'#000':'#FA8072'}}">{{index+1}}</text> 
+      <text class="rank-time">{{log.time}}秒，点击{{log.click}}次</text>
+    </view>
+  </view>
+  <view class="list-rank"> 
+    <view class="item-rank">
+      <text>第二关</text>
+    </view>
+    <view class="rank-info" wx:for="{{level2}}" wx:for-item="log" wx:key="*this">
+       <text class='rank-num' style="color:{{log.size>3?'#000':'#FA8072'}}">{{index+1}}</text> 
+      <text class="rank-time">{{log.time}}秒，点击{{log.click}}次</text> 
+    </view>
+  </view>
+  <view class="list-rank"> 
+    <view class="item-rank">
+      <text>第三关</text>
+    </view>
+    <view class="rank-info" wx:for="{{level3}}" wx:for-item="log" wx:key="*this">
+      <text class='rank-num' style="color:{{log.size>3?'#000':'#FA8072'}}">{{index+1}}</text> 
+      <text class="rank-time">{{log.time}}秒，点击{{log.click}}次</text>
+    </view>
+  </view>
 </view>

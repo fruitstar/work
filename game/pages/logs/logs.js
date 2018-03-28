@@ -2,11 +2,15 @@
 var util = require('../../utils/util.js')
 Page({
   data: {
-    logs: []
+    level1: [],
+    level2:[],
+    level3:[]
   },
   onLoad: function () {
     this.setData({
-      logs: (wx.getStorageSync('maxscore') || [])
+      level1: (wx.getStorageSync('maxscore1') || []),
+      level2: (wx.getStorageSync('maxscore2') || []),
+      level3: (wx.getStorageSync('maxscore3') || []),
     });
   }
 })

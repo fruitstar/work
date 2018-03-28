@@ -37,7 +37,6 @@ Page({
     var data = this.data;
     var that = this;
     var arr = [4, 16, 36];
-    console.log(this.data.size);
     if (this.data.size == arr[arr.length - 1]) {
       this.setData({
         popDesc: '恭喜通过全部挑战！重新开始挑战？'
@@ -68,7 +67,6 @@ Page({
 
     //设置图片宽度
     var image_width = '';
-    console.log(this.data.size)
     switch (this.data.size) {
       case 4:
         image_width = '350rpx';
@@ -135,6 +133,7 @@ Page({
         data.cards[ix][iy].state = 2;
         data.checked += 1; // 完成配对数++
         data.firstX = -1; // 准备下一轮匹配 
+        this.setData({ checked:data.checked })
         // 1.2.1.2 检查是否所有牌都已经翻过来,都已翻过来提示游戏结束
         if (data.checked == data.size / 2) { // 所有牌都配对成功了!
           this.setData({ modalHidden: false });
@@ -173,21 +172,53 @@ Page({
 
   //保存分数
   saveScore: function (score) {
-    var maxscore = wx.getStorageSync('maxscore');
-    if (maxscore == undefined || maxscore == '')
-      maxscore = [];
-    maxscore.push(score);
-    maxscore = maxscore.sort(function (a, b) {
-      if (a.time < b.time)
-        return -1;
-      else if (a.time == b.time && a.click < b.click)
-        return -1;
-      else return 1;
-    });
-    wx.setStorageSync('maxscore', maxscore);
+    var maxscore1 = wx.getStorageSync('maxscore1');
+    var maxscore2 = wx.getStorageSync('maxscore2');
+    var maxscore3 = wx.getStorageSync('maxscore3');
+    if(score.size == 1){
+      if (maxscore1 == undefined || maxscore1 == ''){
+        maxscore1 = [];
+      }
+      maxscore1.push(score);
+      maxscore1 = maxscore1.sort(function (a, b) {
+        if (a.time < b.time)
+          return -1;
+        else if (a.time == b.time && a.click < b.click)
+          return -1;
+        else return 1;
+      });
+      wx.setStorageSync('maxscore1', maxscore1);
+    }else if(score.size == 2){
+      if (maxscore2 == undefined || maxscore2 == '') {
+        maxscore2 = [];
+      }
+      maxscore2.push(score);
+      maxscore2 = maxscore2.sort(function (a, b) {
+        if (a.time < b.time)
+          return -1;
+        else if (a.time == b.time && a.click < b.click)
+          return -1;
+        else return 1;
+      });
+      wx.setStorageSync('maxscore2', maxscore2);
+    }else if(score.size === 3){
+      if (maxscore3 == undefined || maxscore3 == '') {
+        maxscore3 = [];
+      }
+      maxscore3.push(score);
+      maxscore3 = maxscore3.sort(function (a, b) {
+        if (a.time < b.time)
+          return -1;
+        else if (a.time == b.time && a.click < b.click)
+          return -1;
+        else return 1;
+      });
+      wx.setStorageSync('maxscore3', maxscore3);
+    }
   },
   "disableScroll": true,
   onLoad: function (option) {
+    this.setData({size:+option.level})
     this.startGame();
   },
   //弹窗下一关按钮调用的方法

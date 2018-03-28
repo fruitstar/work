@@ -41,5 +41,6 @@
 
 .card {
   padding: 2rpx;
-  magrin: 1rpx;
+  margin: 1rpx;
+  border-radius: 15px;
 }

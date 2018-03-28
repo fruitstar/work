@@ -1,23 +1,14 @@
-//index.js
-//获取应用实例
 var app = getApp()
 Page({
   data: {
     motto: '开始游戏',
     userInfo: {},
   },
-  //事件处理函数
-  startGame: function () {
+  startLevel:function(event){
     wx.navigateTo({
-      url: '../choose/choose'
-    })
-  }, 
-  viewScore: function () {
-    wx.navigateTo({
-      url: '../logs/logs'
+      url: '../game/game?level=' + event.currentTarget.dataset.level
     })
   },
-  
   onLoad: function () {
     console.log('onLoad')
     var that = this
