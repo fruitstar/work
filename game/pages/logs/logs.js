@@ -2,7 +2,7 @@
 var util = require('../../utils/util.js')
 Page({
   data: {
-    level1: [],
+    level1:[],
     level2:[],
     level3:[]
   },

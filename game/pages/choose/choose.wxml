@@ -1,14 +1,11 @@
 <view class='container'>
-<view class='btn-box'>
-  <image class='start-btn' src='../images/level_1.png' data-level='4'></image>
-</view>
-<view class='btn-box'>
-  <image class='start-btn' src='../images/level_2.png' data-level='16'></image>
-</view>
-<view class='btn-box'>
-  <image class='start-btn' src='../images/level_3.png' data-level='36'></image>
-</view>
-  <!-- <image class='start-btn' src='../images/level_1.png' data-level='4' bindtap='startLevel'></image>
-  <image class='start-btn' src='../images/level_2.png' data-level='16' bindtap='startLevel'></image>
-  <image class='start-btn' src='../images/level_3.png' data-level='36' bindtap='startLevel'></image> -->
+  <view class='btn-box'>
+    <image class='start-btn' src='../images/level_1.png' data-level='4' bindtap='startLevel'></image>
+  </view>
+  <view class='btn-box'>
+    <image class='start-btn' src='../images/level_2.png' data-level='16' bindtap='startLevel'></image>
+  </view>
+  <view class='btn-box'>
+    <image class='start-btn' src='../images/level_3.png' data-level='36' bindtap='startLevel'></image>
+  </view>
 </view>

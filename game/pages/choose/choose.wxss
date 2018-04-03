@@ -1,17 +1,17 @@
 /* pages/choose/choose.wxss */
 .btn-box{
   height: 130rpx;
-  background-color: #000;
+  margin-bottom: 130rpx;
 }
 
 .start-btn{
   width: 566rpx;
   height: 130rpx;
-  /* padding-top: -65rpx;
-  padding-left: -283rpx; */
 }
 
 .start-btn:active{
+  position: relative;
+  top: 10rpx;
   width: 550rpx;
   height: 120rpx;
 }

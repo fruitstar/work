@@ -15,20 +15,95 @@
   align-items: center;
 }
 
+.userinfo-circle:nth-of-type(1){
+  animation-delay: 2s; /* Opera */
+  -moz-animation-delay: 2s; /* Firefox */
+  -webkit-animation-delay: 2s; /* Safari 和 Chrome */
+}
+
+.userinfo-circle:nth-of-type(2){
+  animation-delay: 4s; /* Opera */
+  -moz-animation-delay: 4s; /* Firefox */
+  -webkit-animation-delay: 4s; /* Safari 和 Chrome */
+} 
+.userinfo-circle{
+  width:150rpx;
+	height:150rpx;
+  top:220rpx;
+	background:	#FA8072;
+	border-radius:50%;
+  position: absolute;
+	animation:mymove 6s linear infinite; 
+	-webkit-animation:mymove 6s linear infinite; /*  Safari and Chrome  */
+  z-index: -1;
+}
+
 .userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
+  width: 150rpx;
+  height: 150rpx;
   margin: 20rpx;
   border-radius: 50%;
-  
+  z-index: 100;
+}
+
+.userinfo-nickname{
+  margin-top: 100rpx;
 }
 
 .start-btn {
   height: 337rpx;
   width: 565rpx;
-  margin-top:100px;
+  margin-top:120rpx;
 }
+
+.start-btn:active{
+  position: relative;
+  top: 10rpx;
+  height: 327rpx;
+  width: 555rpx;
+}
+
 .check-rank{
-  margin-top:27px;
-  margin-bottom: -50px;
+  position: absolute;
+  bottom: 65rpx;
+}
+
+@keyframes mymove
+{
+	from{
+		opacity:1;
+		transform:scale(1);
+		-ms-transform:scale(1);
+		-webkit-transform:scale(1);
+		-o-transform:scale(1);
+		-moz-transform:scale(1);
+	}
+	to{
+		opacity:0;
+		transform:scale(3);
+		-ms-transform:scale(3);
+		-webkit-transform:scale(3);
+		-o-transform:scale(3);
+		-moz-transform:scale(3);
+	}
+}
+
+@-webkit-keyframes mymove /*Safari and Chrome*/
+{
+		from{
+		opacity:1;
+		transform:scale(1);
+		-ms-transform:scale(1);
+		-webkit-transform:scale(1);
+		-o-transform:scale(1);
+		-moz-transform:scale(1);
+	}
+	to{
+		opacity:0;
+		transform:scale(3);
+		-ms-transform:scale(3);
+		-webkit-transform:scale(3);
+		-o-transform:scale(3);
+		-moz-transform:scale(3);
+	}
 }
